@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: superrr-selector
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run dashboard/App.py --server.address 0.0.0.0 --server.port $PORT
+    healthCheckPath: /_stcore/health
